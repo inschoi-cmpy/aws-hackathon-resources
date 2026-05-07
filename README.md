@@ -80,7 +80,7 @@ aws sts get-session-token \
 > aws-mfa-login.sh : 로컬에서 MFA 코드만 입력하면 자동으로 세션 갱신되는 스크립트
 
 ### 2-1. 스크립트 다운로드
-Linux/macOS용 Bash 스크립트 또는 Git bash에서 실행
+Linux/macOS/Git bash에서 실행
 ```
 curl -O https://raw.githubusercontent.com/inschoi-cmpy/aws-hackathon-resources/refs/heads/main/scripts/aws-mfa-login.sh
 ```
@@ -90,8 +90,13 @@ curl.exe -L "https://raw.githubusercontent.com/inschoi-cmpy/aws-hackathon-resour
 ```
 
 ### 2-2. 실행 권한
+Linux/macOS/Git
 ```
 chmod +x aws-mfa-login.sh
+```
+Window PowerShell
+```
+Set-ExecutionPolicy -Scope Process Bypass
 ```
 ### 2-3. 최초 1회 - base 프로필 생성
 최초 1회 base 프로필 생성 -> MFA 인증 -> default 프로필에 저장  
@@ -106,10 +111,16 @@ aws configure --profile base
 > Default output format: json  
 
 ### 2-4. 스크립트 실행 - 사용할 때마다 (만료 시간 이전까지 지속 사용 가능)
-base 프로필로 MFA 인증
+base 프로필로 MFA 인증  
+Linux/macOS/Git
 ```
 ./aws-mfa-login.sh
 ```
+Window PowerShell
+```
+.\aws-mfa-login-win.ps1
+```
+
 별도의 profile이 있는 경우
 ```
 ./aws-mfa-login.sh <profile 이름>
