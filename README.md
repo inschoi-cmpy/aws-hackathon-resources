@@ -82,10 +82,11 @@ aws sts get-session-token \
 ### 2-1. 스크립트 다운로드
 Linux/macOS용 Bash 스크립트 또는 Git bash에서 실행
 ```
-curl -O https://raw.githubusercontent.com/kbds-insc/aws-hackathon-resources/refs/heads/main/scripts/aws-mfa-login.sh
+curl -O https://raw.githubusercontent.com/inschoi-cmpy/aws-hackathon-resources/refs/heads/main/scripts/aws-mfa-login.sh
 ```
 Window PowerShell
 ```
+curl.exe -L "https://raw.githubusercontent.com/inschoi-cmpy/aws-hackathon-resources/refs/heads/main/scripts/aws-mfa-login-win.ps1" -o aws-mfa-login-win.ps1
 ```
 
 ### 2-2. 실행 권한
